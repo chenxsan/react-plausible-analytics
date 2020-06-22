@@ -92,5 +92,4 @@ export default React.createClass({
 
 ## License
 
-The MIT License (MIT)
- 
+[The MIT License (MIT)](LICENSE)
