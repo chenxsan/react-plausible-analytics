@@ -1,25 +1,24 @@
 {
-  "name": "react-g-analytics",
+  "name": "react-plausible-analytics",
   "version": "0.4.2",
-  "description": "React google analytics with support for react-router",
+  "description": "Plausible analytics as a React component",
   "author": {
-    "name": "Zlatko Fedor",
-    "email": "zfedor@gmail.com",
-    "url": "http://www.cherryprojects.com/"
+    "name": "resynth1943",
+    "email": "resynth1943@tutanota.com",
+    "url": "http://resynth1943.net"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/seeden/react-g-analytics.git"
+    "url": "git://codeberg.org/reynth1943/react-plausible-analytics.git"
   },
   "keywords": [
     "react",
     "react-component",
     "react-router",
     "analytics",
-    "google",
-    "google analytics"
+    "plausible",
+    "plausible analytics"
   ],
-  "private": false,
   "license": "MIT",
   "main": "./dist/index.js",
   "engines": {
@@ -29,7 +28,8 @@
     "prepublish": "npm run build",
     "test": "jest",
     "build": "babel-node ./node_modules/gulp/bin/gulp.js build",
-    "eslint": "node ./node_modules/eslint/bin/eslint.js --ext .js,.jsx ."
+    "eslint": "node ./node_modules/eslint/bin/eslint.js --ext .js,.jsx .",
+    "publish": "npm run build && git stage dist && git commit -m 'Update dist'"
   },
   "dependencies": {
     "history": "^4.6.1",
