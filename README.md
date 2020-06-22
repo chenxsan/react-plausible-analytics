@@ -1,16 +1,11 @@
-# React Google Analytics
+# React Plausible Analytics
 
-[![NPM version][npm-image]][npm-url]
+**[Plausible](https://plausible.io) analytics as a React component.**
 
-[npm-image]: https://img.shields.io/npm/v/react-g-analytics.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/react-g-analytics
-[github-url]: https://github.com/seeden/react-g-analytics
-
-## Motivation
-
-I needed google analytics working in combination with react-router.
+*A fork of [react-ga-analytics](https://github.com/seeden/react-g-analytics), specifically designed for use with Plausible analytics.*
 
 ## Install
+
 ```sh
 npm install react-g-analytics
 ```
@@ -26,8 +21,8 @@ Star this project on [GitHub][github-url].
 
 ## Notice
 
-Use version 0.3.x of the react-g-analytics if you want to use it with react-router 4.x
-Use version 0.2.x of the react-g-analytics if you want to use it with react-router 2.x or 3.x
+Use version 0.3.x of the react-plausible-analytics if you want to use it with react-router 4.x
+Use version 0.2.x of the react-plausible-analytics if you want to use it with react-router 2.x or 3.x
 
 ## Usage
 

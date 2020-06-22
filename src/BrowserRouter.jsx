@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Router, BrowserRouter } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
-import GoogleAnalytics from './GoogleAnalytics';
+import { PlausibleAnalytics } from './Plausible';
 
-export default class GABrowserRouter extends Component {
+export default class PlausibleBrowserRouter extends Component {
   static propTypes = {
     ...BrowserRouter.propTypes,
     history: PropTypes.object,
     children: PropTypes.node,
     id: PropTypes.string.isRequired,
-    set: PropTypes.object,
+    queuedCustomEvents: PropTypes.arrayOf(PropTypes.object),
   };
 
   static childContextTypes = {
@@ -43,15 +43,15 @@ export default class GABrowserRouter extends Component {
   render() {
     const {
       id,
-      set,
+      queuedCustomEvents,
       children,
     } = this.props;
 
     return (
       <Router history={this.history}>
-        <GoogleAnalytics id={id} set={set}>
+        <PlausibleAnalytics id={id} queuedCustomEvents={queuedCustomEvents}>
           {children}
-        </GoogleAnalytics>
+        </PlausibleAnalytics>
       </Router>
     );
   }
