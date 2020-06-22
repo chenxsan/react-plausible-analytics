@@ -64,43 +64,6 @@ var App = module.exports = React.createClass({
 });
 ```
 
-### routes.jsx
-
-Define your routes here.
-
-```js
-var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
-var DefaultRoute = Router.DefaultRoute;
-var Index = require('./Index.jsx');
-var App = require('./App.jsx');
-
-var routes = module.exports = (
-  <Route handler={App} name="index" path="/">
-    <DefaultRoute handler={Index} />
-  </Route>
-);
-```
-
-### client.js
-
-Here is a simple client side
-
-```js
-var React = require('react');
-var app = require('./App.jsx');
-var routes = require('./routes.jsx');
-
-var router = Router.create({
-  routes: routes
-});
-
-router.run(function(Handler, state) {
-  React.render(React.createElement(Handler, {}), node);
-});
-```
-
 ## Custom Event Goals
 
 This module also supports Plausible's [custom event goals](https://docs.plausible.io/custom-event-goals) API.
@@ -130,3 +93,4 @@ export default React.createClass({
 ## License
 
 The MIT License (MIT)
+ 
