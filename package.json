@@ -11,6 +11,11 @@
     "type": "git",
     "url": "git://codeberg.org/reynth1943/react-plausible-analytics.git#master"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run publish" 
+    }
+  },
   "keywords": [
     "react",
     "react-component",
@@ -36,25 +41,27 @@
     "prop-types": "^15.5.8"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.2",
-    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-decorators": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
     "eslint": "3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-loader": "^1.7.1",
-    "eslint-plugin-react": "^6.10.3",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-util": "^3.0.8",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^7.0.0",
+    "husky": "^4.2.5",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router-dom": "^4.1.1"
