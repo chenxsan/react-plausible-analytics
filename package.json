@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://codeberg.org/reynth1943/react-plausible-analytics.git"
+    "url": "git://codeberg.org/reynth1943/react-plausible-analytics.git#master"
   },
   "keywords": [
     "react",

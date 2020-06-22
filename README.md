@@ -7,17 +7,14 @@
 ## Install
 
 ```sh
-npm install react-g-analytics
+npm install git+https://codeberg.org/reynth1943/react-plausible-analytics.git#master
 ```
 
 ## Features
 
- * Automatically load google analytics scripts (optional - id parameter)
- * Automatically send pageview when user will change current route of react-router
+ * This script automatically loads the Plausible analytics script.
 
-# Support us
-
-Star this project on [GitHub][github-url].
+Plausible handles history `popState`s on its own, so we don't need to touch that :-)
 
 ## Notice
 
@@ -31,11 +28,11 @@ Use version 0.2.x of the react-plausible-analytics if you want to use it with re
 User BrowserRouter from react-g-analytics instead of react-router.
 
 ```js
-import { BrowserRouter } from 'react-g-analytics';
+import { BrowserRouter } from 'react-plausible-analytics';
 
 export default function MyComponent() {
   return (
-    <BrowserRouter id="UA-*******-**">
+    <BrowserRouter id="[Plausible ID here]">
       ... your application
     <BrowserRouter>
   );
@@ -53,13 +50,13 @@ ReactGAnalytics has parameter ID (use your own ID)
 
 ```js
 var React = require('react');
-var GoogleAnalytics = require('react-g-analytics');
+var PlausibleAnalytics = require('react-plausible-analytics');
 
 var App = module.exports = React.createClass({
   render: function() {
     return (
       <div id="application">
-        <GoogleAnalytics id="UA-*******-**" />
+        <PlausibleAnalytics id="[Plausible ID here]" />
         <RouteHandler />
       </div>
     );
@@ -104,24 +101,20 @@ router.run(function(Handler, state) {
 });
 ```
 
-## Set
+## Custom Event Goals
 
-If you want to set google analytics parameters after load you can use property named set. Here is small example:
+This module also supports Plausible's [custom event goals](https://docs.plausible.io/custom-event-goals) API.
 
 ```js
 var React = require('react');
-var GoogleAnalytics = require('react-g-analytics');
+var PlausibleAnalytics = require('react-plausible-analytics');
 var RouteHandler = require('react-router').RouteHandler;
 
-var set = {
-  anonymizeIp: true
-};
-
-var App = module.exports = React.createClass({
+export default React.createClass({
   render: function() {
     return (
       <div id="application">
-        <GoogleAnalytics id="UA-*******-**" set={set} />
+        <PlausibleAnalytics id="[Plausible ID here]" queuedCustomEvents={["customEvent"]} />
         <RouteHandler />
       </div>
     );
@@ -129,27 +122,11 @@ var App = module.exports = React.createClass({
 });
 ```
 
-## Skip loading google analytics scripts
-
-If you are loading the GA in different way. You can skip autoload of the GA script simply:
-Do not enter your google analytics ID as parameter.
-
-## Try our other React components
-
- - Translate your great project [react-translate-maker](https://github.com/CherrySoftware/react-translate-maker)
- - Forms [react-form-controlled](https://github.com/seeden/react-form-controlled)
- - Google AdSense via Google Publisher Tag [react-google-publisher-tag](https://github.com/seeden/react-google-publisher-tag)
-
-# Support us
-
-Star this project on [GitHub][github-url].
-
 ## Credits
 
-[Zlatko Fedor](http://github.com/seeden)
+[Zlatko Fedor](http://github.com/seeden) made the original react-g-analytics project.
+[resynth1943](https://resynth1943.net) created the fork that supports Plausible.
 
 ## License
 
 The MIT License (MIT)
-
-Copyright (c) 2016 Zlatko Fedor zlatkofedor@cherryprojects.com
