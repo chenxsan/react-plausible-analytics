@@ -13,7 +13,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run publish" 
+      "pre-push": "npm run publish || true" 
     }
   },
   "keywords": [
