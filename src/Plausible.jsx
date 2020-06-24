@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-function loadScript(domain, script = 'https://plausible.io/js/plausible.js') {
+function loadScript(domain, script = '//plausible.io/js/plausible.js') {
   if (window.plausible) {
     return console.warn('[react-plausible] Plausible has already been loaded!');
   }
@@ -24,10 +24,11 @@ function initPlausible({
     return;
   }
 
-  // Snippet copied from the Plausible.io documentation.
-  window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
-
   loadScript(domain, script);
+
+  // Snippet copied from the Plausible.io documentation.
+  // This has to be placed *after* the `loadScript call`, otherwise the function will exit out early because it thinks Plausible has already been loaded.
+  window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
 
   if (queuedCustomEvents) {
     for (const customEvent of queuedCustomEvents) {
