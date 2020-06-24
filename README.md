@@ -7,7 +7,7 @@
 ## Install
 
 ```sh
-npm install git+https://codeberg.org/reynth1943/react-plausible-analytics.git#master
+npm install git+https://codeberg.org/resynth1943/react-plausible-analytics.git#master
 ```
 
 ## Features
