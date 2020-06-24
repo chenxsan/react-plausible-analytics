@@ -16,12 +16,11 @@ function loadScript(domain, script = 'https://plausible.io/js/plausible.js') {
 }
 
 function initPlausible({
-  id,
   queuedCustomEvents,
   domain,
   script
 }) {
-  if (window.plausible || !id) {
+  if (window.plausible) {
     return;
   }
 
@@ -40,9 +39,7 @@ function initPlausible({
 export function PlausibleAnalytics (props) {
   useEffect(() => {
     initPlausible({
-      id: props.id,
       queuedCustomEvents: props.queuedCustomEvents,
-      plausibleHost: props.plausibleHost,
       domain: props.domain,
       script: props.script
     });
@@ -52,9 +49,8 @@ export function PlausibleAnalytics (props) {
 }
 
 PlausibleAnalytics.propTypes = {
-  id: PropTypes.string,
   queuedCustomEvents: PropTypes.arrayOf(PropTypes.string),
   children: PropTypes.node,
-  plausibleHost: PropTypes.string,
+  domain: PropTypes.string,
   script: PropTypes.string
 }

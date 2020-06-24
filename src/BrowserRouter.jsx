@@ -11,6 +11,8 @@ export default class PlausibleBrowserRouter extends Component {
     children: PropTypes.node,
     id: PropTypes.string.isRequired,
     queuedCustomEvents: PropTypes.arrayOf(PropTypes.object),
+    domain: PropTypes.string,
+    script: PropTypes.string
   };
 
   static childContextTypes = {
@@ -42,14 +44,15 @@ export default class PlausibleBrowserRouter extends Component {
 
   render() {
     const {
-      id,
+      domain,
+      script,
       queuedCustomEvents,
       children,
     } = this.props;
 
     return (
       <Router history={this.history}>
-        <PlausibleAnalytics id={id} queuedCustomEvents={queuedCustomEvents}>
+        <PlausibleAnalytics domain={domain} queuedCustomEvents={queuedCustomEvents} script={script}>
           {children}
         </PlausibleAnalytics>
       </Router>
