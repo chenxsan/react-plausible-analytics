@@ -57,7 +57,8 @@ var PlausibleBrowserRouter = function (_Component) {
 
   PlausibleBrowserRouter.prototype.render = function render() {
     var _props2 = this.props,
-        id = _props2.id,
+        domain = _props2.domain,
+        script = _props2.script,
         queuedCustomEvents = _props2.queuedCustomEvents,
         children = _props2.children;
 
@@ -67,7 +68,7 @@ var PlausibleBrowserRouter = function (_Component) {
       { history: this.history },
       _react2.default.createElement(
         _Plausible.PlausibleAnalytics,
-        { id: id, queuedCustomEvents: queuedCustomEvents },
+        { domain: domain, queuedCustomEvents: queuedCustomEvents, script: script },
         children
       )
     );
@@ -80,7 +81,9 @@ PlausibleBrowserRouter.propTypes = _extends({}, _reactRouterDom.BrowserRouter.pr
   history: _propTypes2.default.object,
   children: _propTypes2.default.node,
   id: _propTypes2.default.string.isRequired,
-  queuedCustomEvents: _propTypes2.default.arrayOf(_propTypes2.default.object)
+  queuedCustomEvents: _propTypes2.default.arrayOf(_propTypes2.default.object),
+  domain: _propTypes2.default.string,
+  script: _propTypes2.default.string
 });
 PlausibleBrowserRouter.childContextTypes = {
   history: _propTypes2.default.object.isRequired

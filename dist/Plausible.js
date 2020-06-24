@@ -30,12 +30,11 @@ function loadScript(domain) {
 }
 
 function initPlausible(_ref) {
-  var id = _ref.id,
-      queuedCustomEvents = _ref.queuedCustomEvents,
+  var queuedCustomEvents = _ref.queuedCustomEvents,
       domain = _ref.domain,
       script = _ref.script;
 
-  if (window.plausible || !id) {
+  if (window.plausible) {
     return;
   }
 
@@ -69,9 +68,7 @@ function initPlausible(_ref) {
 function PlausibleAnalytics(props) {
   (0, _react.useEffect)(function () {
     initPlausible({
-      id: props.id,
       queuedCustomEvents: props.queuedCustomEvents,
-      plausibleHost: props.plausibleHost,
       domain: props.domain,
       script: props.script
     });
@@ -81,9 +78,8 @@ function PlausibleAnalytics(props) {
 }
 
 PlausibleAnalytics.propTypes = {
-  id: _propTypes2.default.string,
   queuedCustomEvents: _propTypes2.default.arrayOf(_propTypes2.default.string),
   children: _propTypes2.default.node,
-  plausibleHost: _propTypes2.default.string,
+  domain: _propTypes2.default.string,
   script: _propTypes2.default.string
 };
