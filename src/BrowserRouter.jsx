@@ -1,3 +1,5 @@
+// @ts-check
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Router, BrowserRouter } from 'react-router-dom';
@@ -34,12 +36,12 @@ export default class PlausibleBrowserRouter extends Component {
       keyLength,
     } = this.props;
 
-    this.history = history || createBrowserHistory(
+    this.history = history || createBrowserHistory({
       basename,
       forceRefresh,
       getUserConfirmation,
       keyLength,
-    );
+    });
   }
 
   render() {
