@@ -14,7 +14,7 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function loadScript(domain) {
-  var script = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'https://plausible.io/js/plausible.js';
+  var script = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '//plausible.io/js/plausible.js';
 
   if (window.plausible) {
     return console.warn('[react-plausible] Plausible has already been loaded!');
@@ -38,12 +38,13 @@ function initPlausible(_ref) {
     return;
   }
 
+  loadScript(domain, script);
+
   // Snippet copied from the Plausible.io documentation.
+  // This has to be placed *after* the `loadScript call`, otherwise the function will exit out early because it thinks Plausible has already been loaded.
   window.plausible = window.plausible || function () {
     (window.plausible.q = window.plausible.q || []).push(arguments);
   };
-
-  loadScript(domain, script);
 
   if (queuedCustomEvents) {
     for (var _iterator = queuedCustomEvents, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
