@@ -9,8 +9,10 @@
 ## Install
 
 ```sh
-npm install git+https://codeberg.org/resynth1943/react-plausible-analytics.git#master
+npm install react-plausible-analytics
 ```
+
+This package is available on NPM, published by [Austin Huang](https://austinhang.me) Thanks to Austin Huang for his kindness.
 
 ## Features
 
