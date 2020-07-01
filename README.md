@@ -12,7 +12,7 @@
 npm install react-plausible-analytics
 ```
 
-This package is available on NPM, published by [Austin Huang](https://austinhang.me) Thanks to Austin Huang for his kindness.
+This package is available on NPM, published by [chenxsan](https://www.npmjs.com/~chenxsan) Thanks to chenxsan for his kindness.
 
 ## Features
 
