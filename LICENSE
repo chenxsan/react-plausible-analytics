@@ -1,6 +1,8 @@
 The MIT License (MIT)
 
-Copyright (c) 2020 Resynth <resynth1943>
+Copyright (c) 2020 Resynth <resynth1943>; 2015 Zlatko Fedor
+
+This software is an adaptation of react-g-analytics, a module provided under the MIT license by Zlatko Fedor (2015).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

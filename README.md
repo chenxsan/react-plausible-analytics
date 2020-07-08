@@ -2,13 +2,17 @@
 
 **[Plausible](https://plausible.io) analytics as a React component.**
 
+[Zlatko Fedor](http://github.com/seeden) made the original react-g-analytics project.
+
 *A fork of [react-ga-analytics](https://github.com/seeden/react-g-analytics), specifically designed for use with Plausible analytics.*
 
 ## Install
 
 ```sh
-npm install git+https://codeberg.org/resynth1943/react-plausible-analytics.git#master
+npm install react-plausible-analytics
 ```
+
+This package is available on NPM, published by [chenxsan](https://www.npmjs.com/~chenxsan) Thanks to chenxsan for his kindness.
 
 ## Features
 
